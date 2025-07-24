@@ -1,0 +1,399 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Profile Card */
+.profile-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.avatar-container {
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #ff9a56 0%, #ffad56 50%, #ffc956 100%);
+    border-radius: 24px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(255, 169, 86, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 169, 86, 0.4);
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* Fallback avatar if image doesn't load */
+.avatar::before {
+    content: "👨‍💻";
+    font-size: 60px;
+    display: block;
+}
+
+.avatar img {
+    position: relative;
+    z-index: 1;
+}
+
+.name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.username {
+    font-size: 16px;
+    color: #a0a0a0;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+/* Profile Details */
+.profile-details {
+    text-align: left;
+    space-y: 12px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+}
+
+.detail-item:hover {
+    color: #ffffff;
+}
+
+.detail-item i {
+    width: 20px;
+    margin-right: 12px;
+    color: #ff9a56;
+    font-size: 14px;
+}
+
+/* Social Links */
+.social-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.social-link.email {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+}
+
+.social-link.facebook {
+    background: linear-gradient(135deg, #1877f2 0%, #166fe5 100%);
+}
+
+.social-link.github {
+    background: linear-gradient(135deg, #333333 0%, #24292e 100%);
+}
+
+.social-link.behance {
+    background: linear-gradient(135deg, #1769ff 0%, #0052cc 100%);
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Portfolio Stats */
+.portfolio-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-item i {
+    font-size: 20px;
+    color: #ff9a56;
+    margin-bottom: 8px;
+}
+
+.stat-number {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Portfolio Navigation */
+.portfolio-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.nav-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-btn.active {
+    background: linear-gradient(135deg, #ff9a56 0%, #ffc956 100%);
+    color: #1a1a2e;
+    font-weight: 600;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.portfolio-item {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9a56 0%, #ffc956 50%, #ff6b6b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fallback for missing images */
+.portfolio-image::before {
+    content: "🎨";
+    font-size: 32px;
+    position: absolute;
+    z-index: 0;
+}
+
+.portfolio-image img {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hidden items for filtering */
+.portfolio-item.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .profile-card {
+        padding: 24px;
+        border-radius: 20px;
+    }
+    
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .avatar img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .name {
+        font-size: 24px;
+    }
+    
+    .social-links {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .portfolio-stats {
+        padding: 16px;
+    }
+    
+    .stat-item i {
+        font-size: 18px;
+    }
+    
+    .stat-number {
+        font-size: 14px;
+    }
+    
+    .nav-btn {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .portfolio-grid {
+        gap: 8px;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile-card {
+        max-width: 450px;
+        padding: 40px;
+    }
+    
+    .social-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-card {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Loading states */
+.portfolio-item.loading {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
